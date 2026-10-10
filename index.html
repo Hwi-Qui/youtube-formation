@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YouTube Formation — Devenez YouTubeur à succès | Lomé, Togo</title>
+<meta name="description" content="Apprenez à créer, développer et monétiser votre chaîne YouTube. Formation complète, accompagnement jusqu'à votre réussite.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect x='1.5' y='4.5' width='21' height='15' rx='4.5' fill='%23FF0000'/><path d='M10 8.8v6.4l5.2-3.2z' fill='white'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+/* ============ VARIABLES & BASE ============ */
+:root{
+  --red:#FF0000;
+  --red-dark:#C80000;
+  --red-bright:#FF3B3B;
+  --red-soft:rgba(255,0,0,.12);
+  --gold:#FFC800;
+  --gold-dark:#D9A900;
+  --wa:#25D366;
+  --bg:#0B0B0C;
+  --bg-2:#101012;
+  --surface:#17171A;
+  --surface-2:#1E1E23;
+  --line:rgba(255,255,255,.08);
+  --text:#FFFFFF;
+  --muted:#A3A3AD;
+  --radius:22px;
+  --shadow:0 24px 60px rgba(0,0,0,.45);
+  --font:'Inter',system-ui,sans-serif;
+  --script:'Caveat',cursive;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+::selection{background:var(--red);color:#fff}
+img,svg{display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+.icon{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.icon.fill{fill:currentColor;stroke:none}
+.container{width:min(1180px,92%);margin:0 auto}
+section{padding:100px 0;position:relative}
+
+/* ============ SCROLL PROGRESS ============ */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--red),var(--gold));z-index:1000;border-radius:0 4px 4px 0}
+
+/* ============ NAVBAR ============ */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:900;padding:18px 0;transition:.35s}
+.navbar.scrolled{background:rgba(11,11,12,.85);backdrop-filter:blur(18px);border-bottom:1px solid var(--line);padding:12px 0}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:1.25rem;letter-spacing:-.02em}
+.logo .icon{width:34px;height:34px;color:var(--red)}
+.logo-badge{background:var(--red);color:#fff;font-size:.6rem;font-weight:800;letter-spacing:.14em;padding:4px 9px;border-radius:6px;transform:translateY(1px)}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{font-size:.92rem;font-weight:600;color:var(--muted);transition:.25s;position:relative}
+.nav-links a:hover,.nav-links a.active{color:#fff}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--red);border-radius:2px;transition:.25s}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-cta{display:inline-flex;align-items:center;gap:9px;background:var(--red);color:#fff;font-weight:700;font-size:.9rem;padding:11px 22px;border-radius:999px;transition:.25s;box-shadow:0 8px 24px rgba(255,0,0,.35)}
+.nav-cta:hover{background:var(--red-dark);transform:translateY(-2px)}
+.burger{display:none;flex-direction:column;gap:5px;padding:6px}
+.burger span{width:24px;height:2.5px;background:#fff;border-radius:2px;transition:.3s}
+.mobile-menu{position:fixed;inset:0;background:rgba(11,11,12,.97);backdrop-filter:blur(20px);z-index:950;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;opacity:0;pointer-events:none;transition:.35s}
+.mobile-menu.open{opacity:1;pointer-events:auto}
+.mobile-menu a{font-size:1.5rem;font-weight:800}
+.mobile-menu .close{position:absolute;top:26px;right:26px;color:#fff}
+.mobile-menu .close .icon{width:30px;height:30px}
+
+/* ============ BUTTONS ============ */
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:1rem;padding:16px 32px;border-radius:999px;transition:.28s;border:1px solid transparent}
+.btn .icon{width:19px;height:19px}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 12px 32px rgba(255,0,0,.35)}
+.btn-red:hover{background:var(--red-dark);transform:translateY(-3px)}
+.btn-ghost{border-color:rgba(255,255,255,.2);color:#fff}
+.btn-ghost:hover{border-color:var(--red);color:var(--red-bright);transform:translateY(-3px)}
+.btn-gold{background:var(--gold);color:#141414;box-shadow:0 12px 32px rgba(255,200,0,.3)}
+.btn-gold:hover{background:var(--gold-dark);transform:translateY(-3px)}
+.btn-wa{background:var(--wa);color:#fff;box-shadow:0 12px 32px rgba(37,211,102,.3)}
+.btn-wa:hover{filter:brightness(.92);transform:translateY(-3px)}
+
+/* ============ HEADINGS ============ */
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--red-soft);border:1px solid rgba(255,0,0,.35);color:var(--red-bright);font-size:.75rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;padding:9px 18px;border-radius:999px;margin-bottom:22px}
+.eyebrow .icon{width:15px;height:15px}
+.eyebrow.gold{background:rgba(255,200,0,.1);border-color:rgba(255,200,0,.4);color:var(--gold)}
+h1,h2,h3{letter-spacing:-.03em;line-height:1.08}
+h2{font-size:clamp(2rem,4.4vw,3.1rem);font-weight:900;margin-bottom:18px}
+.section-sub{color:var(--muted);font-size:1.06rem;max-width:620px}
+.section-head{text-align:center;display:flex;flex-direction:column;align-items:center;margin-bottom:64px}
+.section-head .section-sub{text-align:center}
+.hl{position:relative;display:inline-block;color:var(--red-bright)}
+.hl svg{position:absolute;left:0;bottom:-.18em;width:100%;height:.35em;overflow:visible}
+.hl svg path{stroke:var(--red);stroke-width:7;fill:none;stroke-linecap:round;opacity:.85}
+.script{font-family:var(--script);font-weight:700;color:var(--red-bright);letter-spacing:0}
+
+/* ============ HERO ============ */
+.hero{padding:170px 0 90px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(700px 480px at 78% 30%,rgba(255,0,0,.16),transparent 65%),
+  radial-gradient(500px 400px at 10% 85%,rgba(255,200,0,.06),transparent 60%);}
+.hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse at 50% 40%,#000 20%,transparent 75%)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;position:relative;z-index:2}
+.hero-pill{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);background:rgba(255,255,255,.04);padding:9px 18px;border-radius:999px;font-size:.82rem;font-weight:600;color:var(--muted);margin-bottom:26px}
+.hero-pill .dot{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,0,0,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(255,0,0,0)}100%{box-shadow:0 0 0 0 rgba(255,0,0,0)}}
+.hero h1{font-size:clamp(2.7rem,5.6vw,4.4rem);font-weight:900;margin-bottom:24px}
+.hero-sub{color:var(--muted);font-size:1.12rem;max-width:520px;margin-bottom:36px}
+.hero-sub strong{color:#fff}
+.hero-ctas{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:52px}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;border-top:1px solid var(--line);padding-top:32px;max-width:560px}
+.stat b{display:block;font-size:1.9rem;font-weight:900;letter-spacing:-.03em}
+.stat b span{color:var(--red-bright)}
+.stat small{color:var(--muted);font-size:.8rem;font-weight:600}
+
+/* Phone mockup */
+.hero-visual{position:relative;display:flex;justify-content:center}
+.glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:560px;height:560px;background:radial-gradient(circle,rgba(255,0,0,.3),transparent 62%);filter:blur(50px);z-index:0}
+.phone{position:relative;z-index:2;width:322px;border-radius:46px;background:#000;border:9px solid #26262B;box-shadow:var(--shadow),0 0 0 1px rgba(255,255,255,.06);overflow:hidden;animation:floaty 7s ease-in-out infinite}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.screen{background:#0F0F10;padding:14px 14px 20px}
+.statusbar{display:flex;justify-content:space-between;align-items:center;font-size:.7rem;font-weight:700;padding:2px 6px 10px}
+.statusbar .sicons{display:flex;gap:5px;align-items:center}
+.statusbar svg{width:14px;height:14px;stroke:#fff;fill:none;stroke-width:2}
+.yt-head{display:flex;align-items:center;gap:8px;padding:4px 4px 14px;border-bottom:1px solid rgba(255,255,255,.07)}
+.yt-head .icon{width:26px;height:26px;color:var(--red)}
+.yt-head b{font-size:1.05rem;font-weight:800;letter-spacing:-.02em}
+.channel{display:flex;align-items:center;gap:12px;padding:16px 4px}
+.avatar{width:52px;height:52px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(255,0,0,.45)}
+.avatar .icon{width:24px;height:24px;color:#fff}
+.channel-info b{display:block;font-size:.98rem;font-weight:800}
+.channel-info small{color:var(--muted);font-size:.72rem}
+.ch-actions{margin-left:auto;display:flex;gap:8px;align-items:center}
+.sub-btn{background:#27272B;font-size:.7rem;font-weight:700;padding:7px 14px;border-radius:999px}
+.bell{width:30px;height:30px;border-radius:50%;background:#27272B;display:flex;align-items:center;justify-content:center}
+.bell .icon{width:14px;height:14px}
+.tabs{display:flex;gap:16px;padding:10px 4px;border-bottom:1px solid rgba(255,255,255,.07);font-size:.7rem;font-weight:700;color:var(--muted)}
+.tabs span:first-child{color:#fff;position:relative}
+.tabs span:first-child::after{content:"";position:absolute;left:0;right:0;bottom:-11px;height:2px;background:#fff;border-radius:2px}
+.pop-label{font-size:.72rem;font-weight:800;padding:14px 4px 10px}
+.video-row{display:flex;gap:10px;align-items:center;padding:7px 4px}
+.thumb{width:86px;height:56px;border-radius:10px;position:relative;overflow:hidden;flex-shrink:0}
+.thumb::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.35),transparent 55%)}
+.thumb .dur{position:absolute;right:4px;bottom:4px;background:rgba(0,0,0,.75);font-size:.55rem;font-weight:700;padding:2px 5px;border-radius:4px;z-index:2}
+.thumb .icon{position:absolute;inset:0;margin:auto;width:18px;height:18px;color:rgba(255,255,255,.9);z-index:2}
+.t1{background:linear-gradient(135deg,#0EA5E9,#14B8A6)}
+.t2{background:linear-gradient(135deg,#8B5CF6,#EC4899)}
+.t3{background:linear-gradient(135deg,#F59E0B,#EF4444)}
+.video-row b{display:block;font-size:.78rem;font-weight:800;letter-spacing:.04em}
+.video-row small{color:var(--muted);font-size:.68rem}
+.float-card{position:absolute;z-index:3;display:flex;align-items:center;gap:12px;background:rgba(23,23,26,.9);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:16px;padding:13px 18px;box-shadow:var(--shadow);animation:floaty 6s ease-in-out infinite}
+.float-card .fc-icon{width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.float-card b{display:block;font-size:.86rem;font-weight:800;line-height:1.2}
+.float-card small{color:var(--muted);font-size:.7rem;font-weight:600}
+.fc-1{top:6%;right:-4%;animation-delay:1.2s}
+.fc-1 .fc-icon{background:var(--red-soft);color:var(--red-bright)}
+.fc-2{bottom:9%;left:-6%;animation-delay:2.4s}
+.fc-2 .fc-icon{background:rgba(255,200,0,.14);color:var(--gold)}
+.sticker{position:absolute;top:-2%;right:2%;z-index:4;font-family:var(--script);font-size:1.7rem;font-weight:700;color:var(--red-bright);transform:rotate(7deg);text-align:center;line-height:1.1}
+.sticker svg{width:120px;height:14px;margin:2px auto 0;overflow:visible}
+.sticker svg path{stroke:var(--red);stroke-width:4;fill:none;stroke-linecap:round}
+
+/* ============ MARQUEE ============ */
+.marquee-wrap{padding:0;overflow:hidden;position:relative;z-index:5}
+.marquee{background:var(--red);transform:rotate(-1.4deg);width:106%;margin-left:-3%;padding:16px 0;box-shadow:0 14px 40px rgba(255,0,0,.3)}
+.marquee-track{display:flex;gap:44px;white-space:nowrap;animation:scroll 26s linear infinite;width:max-content}
+.marquee-track span{display:inline-flex;align-items:center;gap:44px;font-weight:900;font-size:1.02rem;letter-spacing:.14em;text-transform:uppercase;color:#fff}
+.marquee-track .icon{width:18px;height:18px;color:#fff}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ============ PROGRAMME ============ */
+#programme{background:var(--bg-2)}
+.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.p-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:34px 30px;position:relative;overflow:hidden;transition:.35s}
+.p-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:.4s}
+.p-card:hover{transform:translateY(-8px);border-color:rgba(255,0,0,.4);box-shadow:0 24px 50px rgba(0,0,0,.5)}
+.p-card:hover::before{transform:scaleX(1)}
+.p-num{position:absolute;top:26px;right:28px;font-size:2.6rem;font-weight:900;color:rgba(255,255,255,.06);letter-spacing:-.04em}
+.p-icon{width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;background:var(--red);color:#fff;box-shadow:0 10px 26px rgba(255,0,0,.35);transition:.35s}
+.p-icon.dark{background:var(--surface-2);color:#fff;border:1px solid var(--line);box-shadow:none}
+.p-card:hover .p-icon{transform:scale(1.08) rotate(-6deg)}
+.p-card h3{font-size:1.22rem;font-weight:800;margin-bottom:10px}
+.p-card p{color:var(--muted);font-size:.95rem}
+
+/* ============ PARCOURS ============ */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative}
+.steps::before{content:"";position:absolute;top:34px;left:12%;right:12%;height:2px;background:linear-gradient(90deg,var(--red),rgba(255,0,0,.1));z-index:0}
+.step{text-align:center;position:relative;z-index:1}
+.step-num{width:68px;height:68px;margin:0 auto 22px;border-radius:50%;background:var(--surface);border:2px solid var(--red);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.25rem;color:var(--red-bright);box-shadow:0 0 0 8px var(--bg);transition:.3s}
+.step:hover .step-num{background:var(--red);color:#fff;transform:scale(1.1)}
+.step h3{font-size:1.08rem;font-weight:800;margin-bottom:8px}
+.step p{color:var(--muted);font-size:.9rem;max-width:230px;margin:0 auto}
+
+/* ============ MONETISATION ============ */
+#monetisation{background:var(--bg-2);overflow:hidden}
+.money-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:70px;align-items:center}
+.money-visual{position:relative;height:460px}
+.m-card{position:absolute;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:22px 26px;display:flex;align-items:center;gap:16px;box-shadow:var(--shadow);width:min(340px,88%);transition:.35s}
+.m-card:hover{transform:translateY(-6px) rotate(0deg)!important;border-color:rgba(255,0,0,.45)}
+.m-card .m-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.m-card b{display:block;font-size:1rem;font-weight:800}
+.m-card small{color:var(--muted);font-size:.82rem}
+.m-1{top:4%;left:2%;transform:rotate(-4deg)}
+.m-1 .m-icon{background:var(--red);color:#fff}
+.m-2{top:36%;left:14%;transform:rotate(3deg)}
+.m-2 .m-icon{background:rgba(255,200,0,.15);color:var(--gold)}
+.m-3{top:68%;left:0%;transform:rotate(-2deg)}
+.m-3 .m-icon{background:var(--surface-2);border:1px solid var(--line);color:#fff}
+.m-badge{position:absolute;top:30%;right:0;background:var(--red);color:#fff;font-family:var(--script);font-size:1.5rem;font-weight:700;padding:10px 22px;border-radius:14px;transform:rotate(6deg);box-shadow:0 12px 30px rgba(255,0,0,.4)}
+.money-content .check-list{margin:30px 0 38px;display:grid;gap:16px}
+.check-list li{display:flex;align-items:center;gap:14px;font-weight:600;font-size:1.02rem}
+.check-list .icon{width:24px;height:24px;color:var(--red-bright)}
+.money-content p.lead{color:var(--muted);font-size:1.05rem}
+
+/* ============ TARIFS ============ */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;align-items:stretch}
+.price-card{background:var(--surface);border:1px solid var(--line);border-radius:26px;padding:42px 34px;display:flex;flex-direction:column;position:relative;transition:.35s}
+.price-card:hover{transform:translateY(-10px);box-shadow:0 30px 60px rgba(0,0,0,.5)}
+.plan-tag{align-self:flex-start;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:9px 18px;border-radius:999px;margin-bottom:26px}
+.tag-red{background:var(--red);color:#fff}
+.tag-dark{background:var(--surface-2);border:1px solid var(--line);color:#fff}
+.tag-gold{background:var(--gold);color:#141414}
+.price{font-size:3rem;font-weight:900;letter-spacing:-.04em;display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.price .max{background:var(--gold);color:#141414;font-size:.8rem;font-weight:900;padding:5px 12px;border-radius:8px;letter-spacing:.08em}
+.plan-desc{color:var(--muted);font-size:.95rem;margin-bottom:28px;min-height:48px}
+.plan-feats{display:grid;gap:13px;margin-bottom:36px}
+.plan-feats li{display:flex;gap:11px;align-items:flex-start;font-size:.93rem;color:#D9D9DE}
+.plan-feats .icon{width:18px;height:18px;color:var(--red-bright);margin-top:3px}
+.price-card .btn{margin-top:auto;justify-content:center}
+.price-card.featured{background:linear-gradient(180deg,#1C1C1F,#131316);border:1px solid rgba(255,200,0,.55);box-shadow:0 30px 70px rgba(255,200,0,.12);transform:scale(1.03)}
+.price-card.featured:hover{transform:scale(1.03) translateY(-10px)}
+.price-card.featured .price{color:var(--gold)}
+.price-card.featured .plan-feats .icon{color:var(--gold)}
+.crown-badge{position:absolute;top:-24px;left:50%;transform:translateX(-50%);width:52px;height:52px;border-radius:50%;background:var(--gold);color:#141414;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(255,200,0,.45);border:4px solid var(--bg)}
+.crown-badge .icon{width:24px;height:24px}
+.price-banner{margin-top:56px;background:var(--red);border-radius:999px;padding:18px 34px;text-align:center;font-weight:800;font-size:1.05rem;box-shadow:0 16px 44px rgba(255,0,0,.35);display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap}
+.price-banner .sep{width:6px;height:6px;border-radius:50%;background:#fff;opacity:.7}
+
+/* ============ AVIS ============ */
+#avis{background:var(--bg-2)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.t-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:34px 30px;transition:.35s;position:relative}
+.t-card:hover{transform:translateY(-8px);border-color:rgba(255,0,0,.4)}
+.stars{display:flex;gap:4px;margin-bottom:20px}
+.stars .icon{width:17px;height:17px;color:var(--gold)}
+.t-card blockquote{font-size:.98rem;color:#E4E4E9;margin-bottom:26px;line-height:1.65}
+.t-author{display:flex;align-items:center;gap:14px}
+.t-avatar{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.95rem;flex-shrink:0}
+.ta-1{background:var(--red);color:#fff}
+.ta-2{background:var(--gold);color:#141414}
+.ta-3{background:var(--surface-2);border:1px solid var(--line);color:#fff}
+.t-author b{display:block;font-size:.95rem;font-weight:800}
+.t-author small{color:var(--muted);font-size:.78rem;font-weight:600}
+
+/* ============ FAQ ============ */
+.faq-wrap{max-width:780px;margin:0 auto;display:grid;gap:14px}
+.faq-item{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.3s}
+.faq-item.open{border-color:rgba(255,0,0,.45)}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 28px;text-align:left;font-size:1.03rem;font-weight:700;color:#fff}
+.faq-q .icon{width:20px;height:20px;color:var(--red-bright);transition:.35s;flex-shrink:0}
+.faq-item.open .faq-q .icon{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-a p{padding:0 28px 26px;color:var(--muted);font-size:.96rem}
+
+/* ============ CONTACT ============ */
+#contact{background:var(--bg-2)}
+.contact-card{background:var(--surface);border:1px solid var(--line);border-radius:32px;padding:60px;display:grid;grid-template-columns:1fr 1fr;gap:60px;position:relative;overflow:hidden}
+.contact-card::before{content:"";position:absolute;top:-140px;right:-140px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(255,0,0,.18),transparent 65%)}
+.contact-left{position:relative;z-index:1}
+.contact-left .script{font-size:1.9rem;display:inline-block;transform:rotate(-3deg);margin-bottom:8px}
+.contact-left h2{margin-bottom:16px}
+.contact-left p{color:var(--muted);margin-bottom:34px}
+.contact-lines{display:grid;gap:18px;margin-bottom:36px}
+.contact-lines li{display:flex;align-items:center;gap:14px;font-weight:600}
+.cl-icon{width:44px;height:44px;border-radius:13px;background:var(--red-soft);color:var(--red-bright);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-lines small{display:block;color:var(--muted);font-weight:500;font-size:.78rem}
+.contact-form{position:relative;z-index:1;display:grid;gap:16px;align-content:start}
+.contact-form input,.contact-form select,.contact-form textarea{width:100%;background:var(--bg-2);border:1px solid var(--line);border-radius:14px;padding:15px 18px;color:#fff;font-family:inherit;font-size:.95rem;transition:.25s;outline:none}
+.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{border-color:var(--red)}
+.contact-form textarea{resize:vertical;min-height:110px}
+.contact-form select{appearance:none;color:var(--muted)}
+.form-note{font-size:.8rem;color:var(--muted);text-align:center}
+
+/* ============ FOOTER ============ */
+footer{background:#08080A;border-top:1px solid var(--line);padding:70px 0 30px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:44px;margin-bottom:54px}
+.footer-brand p{color:var(--muted);font-size:.92rem;margin:18px 0 24px;max-width:300px}
+.socials{display:flex;gap:12px}
+.socials a{width:42px;height:42px;border-radius:12px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted);transition:.25s}
+.socials a:hover{background:var(--red);border-color:var(--red);color:#fff;transform:translateY(-4px)}
+.socials .icon{width:19px;height:19px}
+.footer-col h4{font-size:.85rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:20px;color:#fff}
+.footer-col ul{display:grid;gap:12px}
+.footer-col a{color:var(--muted);font-size:.92rem;transition:.2s}
+.footer-col a:hover{color:var(--red-bright);padding-left:6px}
+.footer-bottom{border-top:1px solid var(--line);padding-top:28px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:.85rem}
+.footer-bottom .script{font-size:1.4rem;transform:rotate(-2deg)}
+
+/* ============ FLOATING WHATSAPP ============ */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:800;width:60px;height:60px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 14px 34px rgba(37,211,102,.45);transition:.3s;animation:pulse 2.4s infinite}
+.wa-float:hover{transform:scale(1.1)}
+.wa-float .icon{width:28px;height:28px}
+
+/* ============ REVEAL ============ */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease;transition-delay:var(--d,0s)}
+.reveal.visible{opacity:1;transform:none}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:1024px){
+  .hero-grid{grid-template-columns:1fr;gap:80px}
+  .hero-visual{margin-top:10px}
+  .cards-grid,.testi-grid{grid-template-columns:repeat(2,1fr)}
+  .price-grid{grid-template-columns:1fr;max-width:520px;margin:0 auto}
+  .price-card.featured{transform:none}
+  .price-card.featured:hover{transform:translateY(-10px)}
+  .steps{grid-template-columns:repeat(2,1fr);gap:44px}
+  .steps::before{display:none}
+  .money-grid{grid-template-columns:1fr;gap:60px}
+  .money-visual{height:420px;max-width:480px;margin:0 auto}
+  .contact-card{grid-template-columns:1fr;padding:44px}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none}
+  .burger{display:flex}
+  section{padding:76px 0}
+  .hero{padding:140px 0 70px}
+  .hero-stats{grid-template-columns:repeat(2,1fr);gap:26px}
+  .cards-grid,.testi-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .fc-1{right:-2%}
+  .fc-2{left:-2%}
+  .sticker{right:-2%;top:-6%}
+  .contact-card{padding:34px 26px}
+  .footer-grid{grid-template-columns:1fr}
+  .price-banner{border-radius:26px}
+}
+</style>
+</head>
+<body>
+
+<!-- ======= SVG SPRITE (vraies icônes) ======= -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-yt" viewBox="0 0 24 24"><rect x="1.5" y="4.5" width="21" height="15" rx="4.5" fill="currentColor"/><path d="M10 8.8v6.4l5.2-3.2z" fill="#fff"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.5-4.5"/></symbol>
+  <symbol id="i-trend" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></symbol>
+  <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></symbol>
+  <symbol id="i-clap" viewBox="0 0 24 24"><path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z"/><path d="m6.2 5.3 3.1 3.9"/><path d="m12.4 3.4 3.1 4"/><path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+  <symbol id="i-palette" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.93 0 1.65-.75 1.65-1.69 0-.44-.18-.83-.44-1.12-.29-.29-.44-.65-.44-1.13a1.64 1.64 0 0 1 1.67-1.66h2c3.05 0 5.55-2.51 5.55-5.56C21.97 6.01 17.46 2 12 2z"/></symbol>
+  <symbol id="i-handshake" viewBox="0 0 24 24"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 8.19 0l2.9 2.9a5.79 5.79 0 0 1 0 8.19l-6.22 6.22a3 3 0 0 1-4.24 0l-6.22-6.22a5.79 5.79 0 0 1 0-8.19l2.15-2.15"/></symbol>
+  <symbol id="i-banknote" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01"/><path d="M18 12h.01"/></symbol>
+  <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></symbol>
+  <symbol id="i-crown" viewBox="0 0 24 24"><path d="M11.56 3.78a.5.5 0 0 1 .88 0l2.06 3.94a.5.5 0 0 0 .7.2l3.96-2.53a.5.5 0 0 1 .76.55l-2.32 8.06a1 1 0 0 1-.96.72H7.36a1 1 0 0 1-.96-.72L4.08 5.94a.5.5 0 0 1 .76-.55l3.96 2.53a.5.5 0 0 0 .7-.2z"/><path d="M5 21h14"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-check-c" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></symbol>
+</svg>
+
+<div id="progress"></div>
+
+<!-- ======= NAVBAR ======= -->
+<header class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="#accueil" class="logo">
+      <svg class="icon"><use href="#i-yt"/></svg>
+      YouTube<span class="logo-badge">FORMATION</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#programme">Programme</a>
+      <a href="#monetisation">Monétisation</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#avis">Avis</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#contact" class="nav-cta"><svg class="icon"><use href="#i-wa"/></svg> Contact</a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close" id="closeMenu" aria-label="Fermer"><svg class="icon"><use href="#i-x"/></svg></button>
+  <a href="#programme">Programme</a>
+  <a href="#monetisation">Monétisation</a>
+  <a href="#tarifs">Tarifs</a>
+  <a href="#avis">Avis</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact" class="btn btn-red">Commencer maintenant</a>
+</div>
+
+<!-- ======= HERO ======= -->
+<section class="hero" id="accueil">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <div class="hero-pill reveal"><span class="dot"></span> Nouvelle promotion — places limitées</div>
+      <h1 class="reveal" style="--d:.08s">Créez une chaîne YouTube qui devient
+        <span class="hl">virale<svg viewBox="0 0 200 20" preserveAspectRatio="none"><path d="M4 14 C 60 4, 140 4, 196 11"/></svg></span>
+      </h1>
+      <p class="hero-sub reveal" style="--d:.16s">Apprenez à <strong>créer</strong>, <strong>développer</strong> et <strong>monétiser</strong> votre chaîne YouTube. Une formation complète, un accompagnement humain, des résultats concrets.</p>
+      <div class="hero-ctas reveal" style="--d:.24s">
+        <a href="#tarifs" class="btn btn-red">Commencer la formation <svg class="icon"><use href="#i-arrow"/></svg></a>
+        <a href="#programme" class="btn btn-ghost"><svg class="icon"><use href="#i-play"/></svg> Voir le programme</a>
+      </div>
+      <div class="hero-stats reveal" style="--d:.32s">
+        <div class="stat"><b><span data-count="120">0</span><span>+</span></b><small>Chaînes lancées</small></div>
+        <div class="stat"><b><span data-count="10">0</span><span>M+</span></b><small>Vues générées</small></div>
+        <div class="stat"><b><span data-count="98">0</span><span>%</span></b><small>Élèves satisfaits</small></div>
+        <div class="stat"><b><span data-count="6">0</span></b><small>Modules complets</small></div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal" style="--d:.2s">
+      <div class="glow"></div>
+      <div class="sticker">Votre chaîne peut<br>devenir virale !<svg viewBox="0 0 120 14"><path d="M4 9 C 40 3, 80 3, 116 8"/></svg></div>
+
+      <div class="phone">
+        <div class="screen">
+          <div class="statusbar">
+            <span>9:41</span>
+            <span class="sicons">
+              <svg viewBox="0 0 24 24"><path d="M2 20h.01M7 20v-4M12 20v-8M17 20V8M22 20V4"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M5 12a10 10 0 0 1 14 0M8.5 15.5a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r="1" fill="#fff"/></svg>
+              <svg viewBox="0 0 24 24"><rect x="2" y="7" width="18" height="10" rx="2"/><path d="M22 11v2"/></svg>
+            </span>
+          </div>
+          <div class="yt-head"><svg class="icon"><use href="#i-yt"/></svg><b>YouTube</b></div>
+          <div class="channel">
+            <div class="avatar"><svg class="icon"><use href="#i-play"/></svg></div>
+            <div class="channel-info"><b>Ma Chaîne</b><small>1,02 M d'abonnés</small></div>
+            <div class="ch-actions">
+              <span class="sub-btn">Abonné</span>
+              <span class="bell"><svg class="icon"><use href="#i-bell"/></svg></span>
+            </div>
+          </div>
+          <div class="tabs"><span>Accueil</span><span>Vidéos</span><span>Playlists</span><span>Communauté</span></div>
+          <div class="pop-label">Vidéos populaires</div>
+          <div class="video-row">
+            <div class="thumb t1"><svg class="icon"><use href="#i-play"/></svg><span class="dur">4:13</span></div>
+            <div><b>VIRAL</b><small>1,2 M vues</small></div>
+          </div>
+          <div class="video-row">
+            <div class="thumb t2"><svg class="icon"><use href="#i-play"/></svg><span class="dur">8:47</span></div>
+            <div><b>TUTORIEL</b><small>854 k vues</small></div>
+          </div>
+          <div class="video-row">
+            <div class="thumb t3"><svg class="icon"><use href="#i-play"/></svg><span class="dur">6:02</span></div>
+            <div><b>ASTUCES</b><small>632 k vues</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="float-card fc-1">
+        <div class="fc-icon"><svg class="icon"><use href="#i-trend"/></svg></div>
+        <div><b>+128 k abonnés</b><small>ce mois-ci</small></div>
+      </div>
+      <div class="float-card fc-2">
+        <div class="fc-icon"><svg class="icon"><use href="#i-eye"/></svg></div>
+        <div><b>1,2 M de vues</b><small>vidéo virale</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= MARQUEE ======= -->
+<div class="marquee-wrap">
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>Analyse de niche <svg class="icon"><use href="#i-play"/></svg> Montage vidéo <svg class="icon"><use href="#i-play"/></svg> Monétisation <svg class="icon"><use href="#i-play"/></svg> Viralité <svg class="icon"><use href="#i-play"/></svg> Identité de chaîne <svg class="icon"><use href="#i-play"/></svg> Accompagnement <svg class="icon"><use href="#i-play"/></svg></span>
+      <span aria-hidden="true">Analyse de niche <svg class="icon"><use href="#i-play"/></svg> Montage vidéo <svg class="icon"><use href="#i-play"/></svg> Monétisation <svg class="icon"><use href="#i-play"/></svg> Viralité <svg class="icon"><use href="#i-play"/></svg> Identité de chaîne <svg class="icon"><use href="#i-play"/></svg> Accompagnement <svg class="icon"><use href="#i-play"/></svg></span>
+    </div>
+  </div>
+</div>
+
+<!-- ======= PROGRAMME ======= -->
+<section id="programme">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon"><use href="#i-spark"/></svg> Le programme</span>
+      <h2>Tout ce qu'il faut pour <span class="hl">percer<svg viewBox="0 0 200 20" preserveAspectRatio="none"><path d="M4 14 C 60 4, 140 4, 196 11"/></svg></span> sur YouTube</h2>
+      <p class="section-sub">Six modules concrets, du choix de la niche jusqu'à la monétisation, pour transformer votre passion en chaîne qui performe.</p>
+    </div>
+    <div class="cards-grid">
+      <article class="p-card reveal">
+        <span class="p-num">01</span>
+        <div class="p-icon"><svg class="icon"><use href="#i-search"/></svg></div>
+        <h3>Analyse des niches</h3>
+        <p>Trouvez la niche qui vous correspond et qui rapporte, grâce à une méthode d'analyse éprouvée.</p>
+      </article>
+      <article class="p-card reveal" style="--d:.08s">
+        <span class="p-num">02</span>
+        <div class="p-icon"><svg class="icon"><use href="#i-trend"/></svg></div>
+        <h3>Analyse des vidéos virales</h3>
+        <p>Découvrez ce qui marche vraiment et reproduisez les bons réflexes des plus grandes chaînes.</p>
+      </article>
+      <article class="p-card reveal" style="--d:.16s">
+        <span class="p-num">03</span>
+        <div class="p-icon dark"><svg class="icon"><use href="#i-bulb"/></svg></div>
+        <h3>Astuces YouTube</h3>
+        <p>Boostez votre visibilité, maîtrisez l'algorithme et atteignez rapidement plus d'abonnés.</p>
+      </article>
+      <article class="p-card reveal">
+        <span class="p-num">04</span>
+        <div class="p-icon"><svg class="icon"><use href="#i-clap"/></svg></div>
+        <h3>Montage vidéo</h3>
+        <p>Apprenez à monter des vidéos professionnelles, même sans aucune expérience au départ.</p>
+      </article>
+      <article class="p-card reveal" style="--d:.08s">
+        <span class="p-num">05</span>
+        <div class="p-icon dark"><svg class="icon"><use href="#i-wrench"/></svg></div>
+        <h3>Outils & paramétrage</h3>
+        <p>Maîtrisez tous les outils et optimisez chaque réglage de votre chaîne YouTube.</p>
+      </article>
+      <article class="p-card reveal" style="--d:.16s">
+        <span class="p-num">06</span>
+        <div class="p-icon"><svg class="icon"><use href="#i-palette"/></svg></div>
+        <h3>Custom d'identité</h3>
+        <p>Créez une identité de chaîne attractive : logo, bannière, description et bien plus.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======= PARCOURS ======= -->
+<section id="parcours">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon"><use href="#i-target"/></svg> Votre parcours</span>
+      <h2>De zéro à YouTubeur, en 4 étapes</h2>
+      <p class="section-sub">Un chemin clair et progressif, suivi pas à pas avec votre formateur.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="step-num">01</div><h3>Diagnostic & niche</h3><p>On identifie votre sujet gagnant et votre positionnement unique.</p></div>
+      <div class="step reveal" style="--d:.1s"><div class="step-num">02</div><h3>Création & identité</h3><p>Chaîne paramétrée, logo et bannière professionnels en place.</p></div>
+      <div class="step reveal" style="--d:.2s"><div class="step-num">03</div><h3>Montage & publication</h3><p>Vos premières vidéos montées et optimisées pour l'algorithme.</p></div>
+      <div class="step reveal" style="--d:.3s"><div class="step-num">04</div><h3>Monétisation & scale</h3><p>Publicités, partenariats et affiliation : vos premiers revenus.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= MONETISATION ======= -->
+<section id="monetisation">
+  <div class="container money-grid">
+    <div class="money-visual reveal">
+      <div class="m-card m-1">
+        <div class="m-icon"><svg class="icon"><use href="#i-yt"/></svg></div>
+        <div><b>Publicités YouTube</b><small>Revenus générés par vos vues</small></div>
+      </div>
+      <div class="m-card m-2">
+        <div class="m-icon"><svg class="icon"><use href="#i-handshake"/></svg></div>
+        <div><b>Partenariats marques</b><small>Contrats de sponsoring rémunérés</small></div>
+      </div>
+      <div class="m-card m-3">
+        <div class="m-icon"><svg class="icon"><use href="#i-link"/></svg></div>
+        <div><b>Produits d'affiliation</b><small>Commissions sur chaque vente</small></div>
+      </div>
+      <div class="m-badge">Vivez de votre chaîne !</div>
+    </div>
+    <div class="money-content reveal" style="--d:.12s">
+      <span class="eyebrow gold"><svg class="icon"><use href="#i-banknote"/></svg> Monétisation</span>
+      <h2>Après vos contenus, <span class="hl">gagnez de l'argent<svg viewBox="0 0 200 20" preserveAspectRatio="none"><path d="M4 14 C 60 4, 140 4, 196 11"/></svg></span> avec les partenariats</h2>
+      <p class="lead">Une fois vos contenus en ligne, nous vous apprenons à transformer votre audience en revenus durables, grâce à plusieurs sources de monétisation complémentaires.</p>
+      <ul class="check-list">
+        <li><svg class="icon"><use href="#i-check-c"/></svg> Partenariats marques</li>
+        <li><svg class="icon"><use href="#i-check-c"/></svg> Publicités YouTube</li>
+        <li><svg class="icon"><use href="#i-check-c"/></svg> Produits d'affiliation</li>
+        <li><svg class="icon"><use href="#i-check-c"/></svg> Et bien plus encore…</li>
+      </ul>
+      <a href="#contact" class="btn btn-red">Discuter de mon projet <svg class="icon"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ======= TARIFS ======= -->
+<section id="tarifs">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon"><use href="#i-crown"/></svg> Tarifs</span>
+      <h2>Choisissez votre formule</h2>
+      <p class="section-sub">Un paiement simple, un accompagnement complet, jusqu'à votre réussite.</p>
+    </div>
+    <div class="price-grid">
+
+      <article class="price-card reveal">
+        <span class="plan-tag tag-red">Formation Débutant</span>
+        <div class="price">6 800 F</div>
+        <p class="plan-desc">Apprenez les bases et lancez votre chaîne !</p>
+        <ul class="plan-feats">
+          <li><svg class="icon"><use href="#i-check"/></svg> Analyse de niche guidée</li>
+          <li><svg class="icon"><use href="#i-check"/></svg> Paramétrage complet de la chaîne</li>
+          <li><svg class="icon"><use href="#i-check"/></svg> Logo, bannière & description</li>
+          <li><svg class="icon"><use href="#i-check"/></svg> Bases du montage vidéo</li>
+          <li><svg class="icon"><use href="#i-check"/></svg> Support WhatsApp 30 jours</li>
+        </ul>
+        <a href="https://wa.me/22890804914?text=Bonjour%2C%20je%20souhaite%20m%27inscrire%20%C3%A0%20la%20FORMATION%20D%C3%89BUTANT%20(6%20800%20F)." target="_blank" class="btn btn-ghost">Choisir Débutant</a>
+      </article>
+
+      <article class="price-card reveal" style="--d:.1s">
+        <span class="plan-tag tag-dark">Formation Pro</span>
+        <div class="price">15 000 F</div>
+        <p class="plan-desc">Approfondissez vos compétences et passez au niveau supérieur !</p>
+        <ul class="plan-feats">
+          <li><svg class="icon"><use href="#i-check"/></svg> Tout le pack Débutant</li>
+          <li><svg class="icon"><use href="#i-check"/></svg> Analyse des vidéos virales</li>
+          <li><svg class="icon"><use href="#i-check"/></svg> Montage vidéo professionnel</li>
+          <li><svg class="icon"><use href="#i-check"/></svg> SEO YouTube & croissance</li>
+          <li><svg class="icon"><use href="#i-check"/></svg> Stratégies de monétisation</li>
+          <li><svg class="icon"><use href="#i-check"/></svg> Support WhatsApp 60 jours</li>
+        </ul>
+        <a href="https://wa.me/22890804914?text=Bonjour%2C%20je%20souhaite%20m%27inscrire%20%C3%A0%20la%20FORMATION%20PRO%20(15%20000%20F)." target="_blank" class="btn btn-red">Choisir Pro</a>
+      </article>
+
+      <article class="price-card featured reveal" style="--d:.2s">
+        <div class="crown-badge"><svg class="icon"><use href="#i-crown"/></svg></div>
+        <span class="plan-tag tag-gold">Formation + Montage Vidéo</span>
+        <div class="price">24 000 F <span class="max">MAX</span></div>
+        <p class="plan-desc">Tout inclus + accompagnement complet !</p>
+        <ul class="plan-feats">
+          <li><svg class="icon"><use href="#i-check"/></svg> Tout le pack Pro</li>
+          <li><svg class="icon"><use href="#i-check"/></svg> Sessions de montage 1-to-1</li>
+          <li><svg class="icon"><use href="#i-check"/></svg> Accompagnement personnalisé</li>
+          <li><svg class="icon"><use href="#i-check"/></svg> Suivi hebdomadaire des stats</li>
+          <li><svg class="icon"><use href="#i-check"/></svg> Coaching jusqu'à votre réussite</li>
+        </ul>
+        <a href="https://wa.me/22890804914?text=Bonjour%2C%20je%20souhaite%20m%27inscrire%20%C3%A0%20la%20FORMATION%20MAX%20(24%20000%20F)." target="_blank" class="btn btn-gold">Passer MAX <svg class="icon"><use href="#i-arrow"/></svg></a>
+      </article>
+
+    </div>
+    <div class="price-banner reveal">
+      Formation complète <span class="sep"></span> Accompagnement <span class="sep"></span> Jusqu'à votre réussite !
+    </div>
+  </div>
+</section>
+
+<!-- ======= AVIS ======= -->
+<section id="avis">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon"><use href="#i-users"/></svg> Ils l'ont fait</span>
+      <h2>Des résultats qui parlent d'eux-mêmes</h2>
+    </div>
+    <div class="testi-grid">
+      <article class="t-card reveal">
+        <div class="stars"><svg class="icon fill"><use href="#i-star"/></svg><svg class="icon fill"><use href="#i-star"/></svg><svg class="icon fill"><use href="#i-star"/></svg><svg class="icon fill"><use href="#i-star"/></svg><svg class="icon fill"><use href="#i-star"/></svg></div>
+        <blockquote>« Je partais de zéro, sans matériel. En 6 mois ma chaîne cuisine a dépassé 52 000 abonnés et j'ai signé mon premier partenariat marque. »</blockquote>
+        <div class="t-author"><div class="t-avatar ta-1">KA</div><div><b>Koffi A.</b><small>Chaîne cuisine — 52 k abonnés</small></div></div>
+      </article>
+      <article class="t-card reveal" style="--d:.1s">
+        <div class="stars"><svg class="icon fill"><use href="#i-star"/></svg><svg class="icon fill"><use href="#i-star"/></svg><svg class="icon fill"><use href="#i-star"/></svg><svg class="icon fill"><use href="#i-star"/></svg><svg class="icon fill"><use href="#i-star"/></svg></div>
+        <blockquote>« Le module montage vaut tout seul le prix de la formation. Mes vidéos ont enfin un rendu professionnel et mes vues ont explosé. »</blockquote>
+        <div class="t-author"><div class="t-avatar ta-2">AM</div><div><b>Ama M.</b><small>Chaîne tech — 120 k abonnés</small></div></div>
+      </article>
+      <article class="t-card reveal" style="--d:.2s">
+        <div class="stars"><svg class="icon fill"><use href="#i-star"/></svg><svg class="icon fill"><use href="#i-star"/></svg><svg class="icon fill"><use href="#i-star"/></svg><svg class="icon fill"><use href="#i-star"/></svg><svg class="icon fill"><use href="#i-star"/></svg></div>
+        <blockquote>« Accompagnement sérieux, réponses rapides sur WhatsApp, conseils appliqués immédiatement. Aujourd'hui je vis de ma chaîne humour. »</blockquote>
+        <div class="t-author"><div class="t-avatar ta-3">YK</div><div><b>Yao K.</b><small>Chaîne humour — 300 k vues / mois</small></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======= FAQ ======= -->
+<section id="faq">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon"><use href="#i-bulb"/></svg> FAQ</span>
+      <h2>Questions fréquentes</h2>
+    </div>
+    <div class="faq-wrap reveal">
+      <div class="faq-item">
+        <button class="faq-q">Faut-il du matériel professionnel pour commencer ? <svg class="icon"><use href="#i-plus"/></svg></button>
+        <div class="faq-a"><p>Non. Un smartphone suffit pour démarrer. Nous vous montrons comment obtenir un rendu professionnel avec le matériel que vous possédez déjà, puis comment évoluer progressivement.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Je suis totalement débutant, est-ce vraiment pour moi ? <svg class="icon"><use href="#i-plus"/></svg></button>
+        <div class="faq-a"><p>Absolument. Le pack Débutant part de zéro : création de la chaîne, paramétrage, identité visuelle et premières vidéos. Chaque étape est guidée pas à pas.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Combien de temps dure la formation ? <svg class="icon"><use href="#i-plus"/></svg></button>
+        <div class="faq-a"><p>Comptez 2 à 4 semaines selon votre rythme. Mais surtout, vous êtes accompagné jusqu'à votre réussite : nous restons disponibles tant que votre chaîne n'a pas décollé.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Comment se passe l'accompagnement ? <svg class="icon"><use href="#i-plus"/></svg></button>
+        <div class="faq-a"><p>Via WhatsApp et en sessions pratiques (visio ou présentiel à Lomé). Vous envoyez vos vidéos, nous les analysons ensemble et vous repartez avec un plan d'action concret.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Quels sont les moyens de paiement acceptés ? <svg class="icon"><use href="#i-plus"/></svg></button>
+        <div class="faq-a"><p>Mobile Money (Flooz, T-Money), espèces ou virement bancaire. Un paiement en deux fois est possible sur les packs Pro et MAX.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= CONTACT ======= -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-card reveal">
+      <div class="contact-left">
+        <span class="script">Devenez YouTubeur à succès !</span>
+        <h2>Prêt à lancer votre chaîne ?</h2>
+        <p>Écrivez-nous dès maintenant : nous répondons à toutes vos questions et vous guidons vers la formule idéale.</p>
+        <ul class="contact-lines">
+          <li><span class="cl-icon"><svg class="icon"><use href="#i-wa"/></svg></span><div><b>+228 90804914</b><small>WhatsApp & appels</small></div></li>
+          <li><span class="cl-icon"><svg class="icon"><use href="#i-pin"/></svg></span><div><b>Lomé — Togo</b><small>Sessions présentielles & visio</small></div></li>
+          <li><span class="cl-icon"><svg class="icon"><use href="#i-clock"/></svg></span><div><b>7j / 7 — 9h à 19h</b><small>Réponse sous 24 h</small></div></li>
+        </ul>
+        <a href="https://wa.me/22890804914" target="_blank" class="btn btn-wa"><svg class="icon"><use href="#i-wa"/></svg> Écrire sur WhatsApp</a>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <input type="text" id="fName" placeholder="Votre nom complet" required>
+        <input type="tel" id="fPhone" placeholder="Votre numéro WhatsApp">
+        <select id="fLevel" required>
+          <option value="" disabled selected>Votre niveau actuel</option>
+          <option>Débutant complet</option>
+          <option>J'ai déjà une chaîne</option>
+          <option>Je veux me professionnaliser</option>
+        </select>
+        <textarea id="fMsg" placeholder="Parlez-nous de votre projet de chaîne…"></textarea>
+        <button type="submit" class="btn btn-red" style="justify-content:center">Envoyer ma demande <svg class="icon"><use href="#i-arrow"/></svg></button>
+        <span class="form-note">Votre demande sera ouverte directement dans WhatsApp.</span>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ======= FOOTER ======= -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#accueil" class="logo"><svg class="icon"><use href="#i-yt"/></svg> YouTube<span class="logo-badge">FORMATION</span></a>
+        <p>Apprenez à créer, développer et monétiser votre chaîne YouTube. Formation complète et accompagnement jusqu'à votre réussite.</p>
+        <div class="socials">
+          <a href="https://wa.me/22890804914" target="_blank" aria-label="WhatsApp"><svg class="icon"><use href="#i-wa"/></svg></a>
+          <a href="#accueil" aria-label="YouTube"><svg class="icon"><use href="#i-yt"/></svg></a>
+          <a href="mailto:contact@ytformation.tg" aria-label="Email"><svg class="icon"><use href="#i-mail"/></svg></a>
+          <a href="tel:+22890804914" aria-label="Téléphone"><svg class="icon"><use href="#i-phone"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#programme">Programme</a></li>
+          <li><a href="#parcours">Parcours</a></li>
+          <li><a href="#monetisation">Monétisation</a></li>
+          <li><a href="#avis">Avis élèves</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Formations</h4>
+        <ul>
+          <li><a href="#tarifs">Débutant — 6 800 F</a></li>
+          <li><a href="#tarifs">Pro — 15 000 F</a></li>
+          <li><a href="#tarifs">Max — 24 000 F</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+22890804914">+228 90804914</a></li>
+          <li><a href="https://wa.me/22890804914" target="_blank">WhatsApp</a></li>
+          <li><a href="#contact">Lomé, Togo</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> YouTube Formation — Tous droits réservés.</span>
+      <span class="script">Devenez YouTubeur à succès !</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/22890804914" target="_blank" class="wa-float" aria-label="WhatsApp"><svg class="icon"><use href="#i-wa"/></svg></a>
+
+<script>
+// Année automatique
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Navbar scroll + barre de progression
+const navbar = document.getElementById('navbar');
+const progress = document.getElementById('progress');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
+  const h = document.documentElement;
+  progress.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+}, {passive:true});
+
+// Menu mobile
+const menu = document.getElementById('mobileMenu');
+document.getElementById('burger').addEventListener('click', () => menu.classList.add('open'));
+document.getElementById('closeMenu').addEventListener('click', () => menu.classList.remove('open'));
+menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+
+// Reveal au scroll
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, {threshold:.15});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// Compteurs animés
+const cio = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target, target = +el.dataset.count, dur = 1600, t0 = performance.now();
+    const tick = t => {
+      const p = Math.min((t - t0) / dur, 1);
+      el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+    cio.unobserve(el);
+  });
+}, {threshold:.6});
+document.querySelectorAll('[data-count]').forEach(el => cio.observe(el));
+
+// FAQ accordéon
+document.querySelectorAll('.faq-item').forEach(item => {
+  const btn = item.querySelector('.faq-q'), ans = item.querySelector('.faq-a');
+  btn.addEventListener('click', () => {
+    const open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(o => { o.classList.remove('open'); o.querySelector('.faq-a').style.maxHeight = null; });
+    if (!open) { item.classList.add('open'); ans.style.maxHeight = ans.scrollHeight + 'px'; }
+  });
+});
+
+// Lien nav actif
+const secs = document.querySelectorAll('section[id]');
+const nio = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      document.querySelectorAll('.nav-links a').forEach(a =>
+        a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+    }
+  });
+}, {rootMargin:'-45% 0px -50% 0px'});
+secs.forEach(s => nio.observe(s));
+
+// Formulaire -> WhatsApp
+document.getElementById('contactForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const nom = document.getElementById('fName').value.trim();
+  const tel = document.getElementById('fPhone').value.trim();
+  const niv = document.getElementById('fLevel').value;
+  const msg = document.getElementById('fMsg').value.trim();
+  const txt = `Bonjour ! Je suis ${nom}.${tel ? ' Tél : ' + tel + '.' : ''} Niveau : ${niv}.${msg ? ' Mon projet : ' + msg : ''}`;
+  window.open('https://wa.me/22890804914?text=' + encodeURIComponent(txt), '_blank');
+});
+</script>
+</body>
+</html>
